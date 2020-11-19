@@ -31,6 +31,13 @@ namespace XMLWeather
 
         public void displayForecast()
         {
+            date1.Visible = max1.Visible = min1.Visible = temp1.Visible = day1.Visible = true;
+            date2.Visible = max2.Visible = min2.Visible = temp2.Visible = day2.Visible = true;
+            date3.Visible = max3.Visible = min3.Visible = temp3.Visible = day3.Visible = true;
+            date4.Visible = max4.Visible = min4.Visible = temp4.Visible = day4.Visible = true;
+            date5.Visible = max5.Visible = min5.Visible = temp5.Visible = day5.Visible = true;
+            date6.Visible = max6.Visible = min6.Visible = temp6.Visible = day6.Visible = cityOutput.Visible = true;
+
             #region location
             date1.Parent = max1.Parent = min1.Parent = temp1.Parent = day1;
             date2.Parent = max2.Parent = min2.Parent = temp2.Parent = day2;
@@ -51,26 +58,32 @@ namespace XMLWeather
             date1.Text = Form1.days[1].date;
             min1.Text = Form1.days[1].tempLow;
             max1.Text = Form1.days[1].tempHigh;
+            temp1.Text = Form1.days[1].temp;
 
             date2.Text = Form1.days[2].date;
             min2.Text = Form1.days[2].tempLow;
             max2.Text = Form1.days[2].tempHigh;
+            temp2.Text = Form1.days[2].temp;
 
             date3.Text = Form1.days[3].date;
             min3.Text = Form1.days[3].tempLow;
             max3.Text = Form1.days[3].tempHigh;
+            temp3.Text = Form1.days[3].temp;
 
             date4.Text = Form1.days[4].date;
             min4.Text = Form1.days[4].tempLow;
             max4.Text = Form1.days[4].tempHigh;
+            temp4.Text = Form1.days[4].temp;
 
             date5.Text = Form1.days[5].date;
             min5.Text = Form1.days[5].tempLow;
             max5.Text = Form1.days[5].tempHigh;
+            temp5.Text = Form1.days[5].temp;
 
             date6.Text = Form1.days[6].date;
             min6.Text = Form1.days[6].tempLow;
             max6.Text = Form1.days[6].tempHigh;
+            temp6.Text = Form1.days[6].temp;
             #endregion
 
             #region day 1 display
@@ -238,8 +251,13 @@ namespace XMLWeather
 
         private void todayLabel_Click(object sender, EventArgs e)
         {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
+            date1.Visible = max1.Visible = min1.Visible = temp1.Visible = day1.Visible = false;
+            date2.Visible = max2.Visible = min2.Visible = temp2.Visible = day2.Visible = false;
+            date3.Visible = max3.Visible = min3.Visible = temp3.Visible = day3.Visible = false;
+            date4.Visible = max4.Visible = min4.Visible = temp4.Visible = day4.Visible = false;
+            date5.Visible = max5.Visible = min5.Visible = temp5.Visible = day5.Visible = false;
+            date6.Visible = max6.Visible = min6.Visible = temp6.Visible = day6.Visible = cityOutput.Visible = false;
+            daysLabel.Visible = todayLabel.Visible = label4.Visible = false;
 
             CurrentScreen cs = new CurrentScreen();
             this.Controls.Add(cs);

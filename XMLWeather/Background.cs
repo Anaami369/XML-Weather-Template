@@ -40,8 +40,7 @@ namespace XMLWeather
 
         private void forecastButton_Click(object sender, EventArgs e)
         {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
+            currentButton.Visible = forecastButton.Visible = label1.Visible = false;
 
             ForecastScreen fs = new ForecastScreen();
             this.Controls.Add(fs);
@@ -49,8 +48,7 @@ namespace XMLWeather
 
         private void currentButton_Click(object sender, EventArgs e)
         {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
+            currentButton.Visible = forecastButton.Visible = label1.Visible = false;
 
             CurrentScreen cs = new CurrentScreen();
             this.Controls.Add(cs);

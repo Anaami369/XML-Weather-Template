@@ -24,6 +24,8 @@ namespace XMLWeather
 
         public void DisplayCurrent()
         {
+            cityOutput.Visible = temp.Visible = min.Visible = max.Visible = date.Visible = true;
+
             cityOutput.Text = Form1.days[0].location;
             temp.Text = Form1.days[0].temp;
             min.Text = Form1.days[0].tempLow;
@@ -60,8 +62,7 @@ namespace XMLWeather
 
         private void daysLabel_Click(object sender, EventArgs e)
         {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
+           label3.Visible = daysLabel.Visible = todayLabel.Visible = label1.Visible = cityOutput.Visible = temp.Visible = min.Visible = max.Visible = date.Visible = false;
 
             ForecastScreen fs = new ForecastScreen();
             this.Controls.Add(fs);
