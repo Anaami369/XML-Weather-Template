@@ -11,6 +11,18 @@ namespace XMLWeather
 {
     public partial class ForecastScreen : UserControl
     {
+        string[] thunder = { "200", "201", "202", "210", "211", "212", "221", "230", "231", "232" };
+        string[] rain = { "300", "301", "302", "310", "311", "312", "313", "314", "321", "500", "501", "502", "503", "504", "511", "520", "521", "522", "531" };
+        string[] snow = { "600", "601", "602", "611", "612", "613", "615", "616", "620", "621", "622" };
+        string[] clouds = { "801", "802", "803", "804" };
+
+        Image thunderstorm = Properties.Resources.thunderstorm;
+        Image rainy = Properties.Resources.rainy;
+        Image cloudy = Properties.Resources.cloudy;
+        Image snowy = Properties.Resources.snow;
+        Image sunny = Properties.Resources.sunny;
+        Image sunnyCloudy = Properties.Resources.sunnyCloudy;
+
         public ForecastScreen()
         {
             InitializeComponent();
@@ -19,6 +31,23 @@ namespace XMLWeather
 
         public void displayForecast()
         {
+            #region location
+            date1.Parent = max1.Parent = min1.Parent = temp1.Parent = day1;
+            date2.Parent = max2.Parent = min2.Parent = temp2.Parent = day2;
+            date3.Parent = max3.Parent = min3.Parent = temp3.Parent = day3;
+            date4.Parent = max4.Parent = min4.Parent = temp4.Parent = day4;
+            date5.Parent = max5.Parent = min5.Parent = temp5.Parent = day5;
+            date6.Parent = max6.Parent = min6.Parent = temp6.Parent = day6;
+
+            date1.Location = date2.Location = date3.Location = date4.Location = date5.Location = date6.Location = new Point(19, 4);
+            max1.Location = max2.Location = max3.Location = max4.Location = max5.Location = max6.Location = new Point(16, 36);
+            min1.Location = min2.Location = min3.Location = min4.Location = min5.Location = min6.Location = new Point(16, 60);
+            temp1.Location = temp2.Location = temp3.Location = temp4.Location = temp5.Location = temp6.Location = new Point(44, 36);
+
+            cityOutput.Text = Form1.days[0].location;
+            #endregion
+
+            #region display forecast
             date1.Text = Form1.days[1].date;
             min1.Text = Form1.days[1].tempLow;
             max1.Text = Form1.days[1].tempHigh;
@@ -26,15 +55,194 @@ namespace XMLWeather
             date2.Text = Form1.days[2].date;
             min2.Text = Form1.days[2].tempLow;
             max2.Text = Form1.days[2].tempHigh;
+
+            date3.Text = Form1.days[3].date;
+            min3.Text = Form1.days[3].tempLow;
+            max3.Text = Form1.days[3].tempHigh;
+
+            date4.Text = Form1.days[4].date;
+            min4.Text = Form1.days[4].tempLow;
+            max4.Text = Form1.days[4].tempHigh;
+
+            date5.Text = Form1.days[5].date;
+            min5.Text = Form1.days[5].tempLow;
+            max5.Text = Form1.days[5].tempHigh;
+
+            date6.Text = Form1.days[6].date;
+            min6.Text = Form1.days[6].tempLow;
+            max6.Text = Form1.days[6].tempHigh;
+            #endregion
+
+            #region day 1 display
+            if (thunder.Contains(Background.days[1].range))
+            {
+                day1.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[1].range))
+            {
+                day1.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[1].range))
+            {
+                day1.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[1].range))
+            {
+                day1.BackgroundImage = snowy;
+            }
+            else if (Background.days[1].range == "800")
+            {
+                day1.BackgroundImage = sunny;
+            }
+            else
+            {
+                day1.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
+
+            #region day 2 display
+            if (thunder.Contains(Background.days[2].range))
+            {
+                day2.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[2].range))
+            {
+                day2.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[2].range))
+            {
+                day2.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[2].range))
+            {
+                day2.BackgroundImage = snowy;
+            }
+            else if (Background.days[2].range == "800")
+            {
+                day2.BackgroundImage = sunny;
+            }
+            else
+            {
+                day2.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
+
+            #region day 3 display
+            if (thunder.Contains(Background.days[3].range))
+            {
+                day3.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[3].range))
+            {
+                day3.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[3].range))
+            {
+                day3.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[3].range))
+            {
+                day3.BackgroundImage = snowy;
+            }
+            else if (Background.days[3].range == "800")
+            {
+                day3.BackgroundImage = sunny;
+            }
+            else
+            {
+                this.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
+
+            #region day4 display
+            if (thunder.Contains(Background.days[4].range))
+            {
+                day4.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[4].range))
+            {
+                day4.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[4].range))
+            {
+                day4.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[4].range))
+            {
+                day4.BackgroundImage = snowy;
+            }
+            else if (Background.days[4].range == "800")
+            {
+                day4.BackgroundImage = sunny;
+            }
+            else
+            {
+                day4.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
+
+            #region day5 display
+            if (thunder.Contains(Background.days[5].range))
+            {
+                day5.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[5].range))
+            {
+                day5.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[5].range))
+            {
+                day5.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[5].range))
+            {
+                day5.BackgroundImage = snowy;
+            }
+            else if (Background.days[5].range == "800")
+            {
+                day5.BackgroundImage = sunny;
+            }
+            else
+            {
+                day5.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
+
+            #region day6 display
+            if (thunder.Contains(Background.days[6].range))
+            {
+                day6.BackgroundImage = thunderstorm;
+            }
+            else if (rain.Contains(Background.days[6].range))
+            {
+                day6.BackgroundImage = rainy;
+            }
+            else if (clouds.Contains(Background.days[6].range))
+            {
+                day6.BackgroundImage = cloudy;
+            }
+            else if (snow.Contains(Background.days[6].range))
+            {
+                day6.BackgroundImage = snowy;
+            }
+            else if (Background.days[6].range == "800")
+            {
+                day6.BackgroundImage = sunny;
+            }
+            else
+            {
+                day6.BackgroundImage = sunnyCloudy;
+            }
+            #endregion
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void todayLabel_Click(object sender, EventArgs e)
         {
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
             CurrentScreen cs = new CurrentScreen();
-            f.Controls.Add(cs);
+            this.Controls.Add(cs);
         }
     }
 }

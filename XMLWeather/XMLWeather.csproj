@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Background.Designer.cs">
+      <DependentUpon>Background.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackImage.cs" />
     <Compile Include="CurrentScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CurrentScreen.resx">
       <DependentUpon>CurrentScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +108,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rain3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudy2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rainy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunny.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudy1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thunderstorm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fog.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
